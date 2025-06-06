@@ -1,0 +1,242 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;    
+    box-sizing: border-box;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    flex-direction: column;
+}
+
+.snowman {
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 600px;
+    position: relative;
+    gap: -60px;
+}
+
+
+
+.header {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+.face {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    z-index: 5;
+}
+
+.left-eye, .right-eye {
+    background-color: black;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    position: relative;    
+}
+
+.eyes {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 20 0px;
+}
+
+.left-eye {
+    left: 20px;
+}
+
+.right-eye {
+    top: 10px;
+    left: 80px;
+}
+
+.nose {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;  
+    border-right: 10px solid transparent; 
+    border-bottom: 30px solid orange;
+    position: absolute;
+    top: 75px;   
+    left: 30px; 
+    transform: rotate(-90deg);
+    border-radius: 10px;
+}
+
+.mouth {
+    position: absolute;
+    top: 100px;
+    left: 45%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 30px;
+}
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.dot1 { top: 10px; left: 0px; }
+.dot2 { top: 18px; left: 15px; }
+.dot3 { top: 25px; left: 30px; }
+.dot4 { top: 26px; left: 43px; } /* 중앙 아래쪽 */
+.dot5 { top: 25px; left: 58px; }
+.dot6 { top: 18px; left: 73px; }
+.dot7 { top: 10px; left: 88px; }
+  
+
+.hat1 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(28, 17, 3);
+    border-radius: 5px;
+    top: 0;
+    transform: translate(30%,-90%);
+    z-index: 10;
+}
+.hat2 {
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    background-color: rgb(255, 146, 5);
+    border-radius: 1px;
+    top: 0;
+    transform: translate(30%,-40%);
+    z-index: 10;
+}
+.hat3 {
+    position: absolute;
+    width: 170px;
+    height: 25px;
+    background-color: rgb(28, 17, 3);
+    border-radius: 5px;
+    top: 0;
+    transform: translate(100,-90%);
+    z-index: 8;
+}
+
+.hat {
+    transform: rotate(14deg);
+    position: absolute;
+    left: 10px;
+}
+
+.body {
+    position: relative;
+    width: 200px;
+    height: 400px;
+    z-index: 0;
+}
+
+
+.left-arm {
+  background-color: #8d765a;
+  border-radius: 2px;
+  width: 4px;
+  height: 100px;
+  transform: rotate(-59deg);
+  position: relative;
+  right: 43px;
+  bottom: 0px;
+}
+
+.right-arm {
+  background-color: #8d765a;
+  border-radius: 2px;
+  width: 4px;
+  height: 100px;
+  transform: rotate(59deg);
+  position: relative;
+  left: 220px;
+  bottom: 100px;
+}
+
+.button1 {
+  background-color: #000000;
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  margin-bottom: 10px;
+  flex-direction: column;
+  position: absolute;
+  left: 70px;
+  top: 30px;
+}
+.button2 {
+  background-color: #000000;
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  margin-bottom: 10px;
+  flex-direction: column;
+  position: absolute;
+  left: 77px;
+  top: 65px
+}
+.button3 {
+  background-color: #000000;
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  margin-bottom: 10px;
+  flex-direction: column;
+  position: absolute;
+  left: 80px;
+  top: 100px
+}
+
+.snow1 {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(180deg, #ecebeb, white ,#fbf7f7);
+    border-radius: 50%;
+    z-index: 1;
+    top: 90px;
+}
+
+.snow2 {
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(180deg, #ecebeb, white ,#fbf7f7);
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    z-index: 2;
+}
+
+.snow3 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    min-width: 200px;
+    min-height: 200px;
+    background: linear-gradient(180deg, #ecebeb, white ,#fbf7f7);
+    border-radius: 50%;
+    z-index: 3;
+    top: 380px;
+    left: 0;
+
+}

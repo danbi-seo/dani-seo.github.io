@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나만의 채팅방 만들기</title>
+    <link rel="stylesheet" href="5-1과제_채팅방말풍선추가하기.css">
+</head>
+<body>
+    <div class="chat">
+        <div class="chat-header">
+            <div class="back-chat" style="font-size: 1.6rem">&lt;</div>
+            <div class="chat-title">내친구 김민수</div>
+            <div class="tap-bar">
+                <div class="tap"></div>
+                <div class="tap"></div>
+                <div class="tap"></div>
+            </div>
+        </div>
+
+        <div class="chat-message">
+
+            <div class="chat-you">
+                <img class="profile-img" src="userimg.jpg">
+                <div class="text-you">knock knock 뭐하냐</div>
+                <div class="send-date-you">13:10</div>
+            </div>
+
+            <div class="chat-me">
+                <div class="send-date-me">13:20</div>
+                <div class="text-me">요즘 뭐하고 지내냐<br>밥 한번 먹어야지</div>
+            </div>
+
+            <div class="chat-you">
+                <img class="profile-img" src="userimg.jpg">
+                <div class="text-you">말 나온김에 오늘 콜?</div>
+                <div class="send-date-you">13:22</div>
+            </div>
+
+            <div class="chat-me">
+                <div class="send-date-me">13:25</div>
+                <div class="text-me">오 좋아.
+                    <br>그럼 강남역에서 저녁 7시에 보자.</div>
+            </div>
+
+            <div class="map-chat">
+                <div class="map-container">
+                    <img class="map" alt="지도이미지" src="mapimg.png">
+                    <div class="map-address">서울특별시 강남구 테헤란로 123-12번지</div>
+                    <div class="btn-row">
+                        <input type="button" class="local-btn" value="장소 바로가기">
+                        <input type="button" class="find-btn" value="길찾기">
+                    </div>
+                    <div class="map_bottom">
+                        <p>오즈맵</p>
+                        <div class="map-next">></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-me">
+                <div class="send-date-me">13:30</div>
+                <div class="text-me">6번 출구 앞에서 기다릴게</div>
+            </div>
+
+
+        </div>
+
+        <div class="footer">
+            <div class="plus-btn">+</div>
+            <div class="chat-input">
+                <input type="text" placeholder="메시지를 입력하세요.." class="text-input">
+            </div>
+            <div class="button">
+                <input type="submit" value="전송" class="send-btn">
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#wrap {
+  width: 100%;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  background-color: palegoldenrod;
+  float: left;
+  position: fixed;
+}
+#in_header {
+  width: 1200px;
+  height: 100%;
+  background-color: orange;
+  margin: 0 auto; 
+  text-align: center; 
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 100px; }
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+#logo {
+  width: 150px;
+  height: 100px;
+  background-color: beige;
+  float: left;
+}
+
+#gnb {
+  width: 1000px;
+  height: 100%;
+  background-color: beige;
+  float: right;
+}
+
+#gnb > li {
+  width: 20%;
+  height: 100%;
+  float: left;
+}
+
+#section_1 {
+  width: 100%;
+  height: 1090px;
+  background-color: papayawhip;
+  float: left;
+}
+
+
+#section_2 {
+  width: 100%;
+  background-color: rgb(245, 255, 207);
+  float: left;
+  padding: 50px 0px;
+}
+
+.container {
+  width: 1200px;
+  height: 100%;
+  background-color: rgb(187, 212, 255);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.circle {
+  width: 262.5px;
+  height: 262.5px;
+  border: 1px solid black;
+  box-sizing: border-box; 
+  border-radius: 50%; 
+  float: left;
+  margin-right: 50px;
+}
+
+
+.circle:last-child {
+  margin-right: 0;
+}
+
+#section_3 {
+  width: 100%;
+  height: 1700px;
+  background-color: rgb(227, 209, 255);
+  float: left;
+  padding-bottom: 50px;
+}
+
+.con_wrap {
+  width: 386px;
+  height: 100%;
+  background-color: rgb(157, 255, 255);
+  float: left;
+  margin-right: 20px;
+}
+
+.con_wrap:last-child {
+  margin-right: 0;
+}
+
+
+.con_wrap > li {
+  width: 100%;
+  height: 500px;
+  background-color: rgb(167, 249, 167);
+}
+
+
+.con_wrap > .long_box {
+  width: 600px;
+  background-color: rgb(255, 193, 193);
+}
+
+.m_box {
+  margin: 50px 0;
+}
+
+
+#top_btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: rgb(255, 158, 158);
+  position: fixed; 
+  bottom: 50px; 
+  right: 80px; 
+  font: 900 20px/50px ''; 
+  text-align: center;
+
+}
+
+
+#top_btn a {
+  display: block;
+}
