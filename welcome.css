@@ -98,6 +98,17 @@ title {
     background-size: cover;
     padding: 0px 5px 0px 5px;
 }
+.task5-Box {
+    background-position: center;
+    background-size: contain;
+    padding: 10px 0 10px 5px;
+}
+.task5-Box > img {
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    padding: 0px 5px 0px 5px;
+}
 
 .teamBox {
     display: flex;
