@@ -6,7 +6,7 @@ const $result = document.querySelector('#display');
 $result.value = '0';
 
 
-
+// 숫자 클릭 이벤트 (2)
 const onClickNum = (event) => {
     const clickedNum = event.target.textContent;
 
@@ -28,7 +28,7 @@ const onClickNum = (event) => {
 };
 
 
-// //숫자 클릭 이벤트
+// //숫자 클릭 이벤트 (1)
 // const onClickNum = (event) => {
 //     if (operator) {
 //         secondOperand += event.target.textContent; // 이벤트 실행된 타겟의 텍스트를 가져오기
@@ -53,6 +53,7 @@ numButtons.forEach(button => {
     })
 })
 
+
 //소수점 버튼 클릭시 
 const onClickDecimal  = () => {
     if (operator) {
@@ -71,8 +72,8 @@ const onClickDecimal  = () => {
 document.querySelector('#decimal').addEventListener('click', onClickDecimal);
 
 
-//연산자 클릭 이벤트 설정
-const onClickOperator = (op) => () => {
+//연산자 클릭 이벤트 설정 (고차함수)
+const onClickOperator = (op) => () => { 
     if (firstOperand) {
         if (secondOperand) {
             calculate();
@@ -83,34 +84,13 @@ const onClickOperator = (op) => () => {
         }
     };
 
-document.querySelector('#plus').addEventListener('click', onClickOperator('+'));
-document.querySelector('#minus').addEventListener('click', onClickOperator('-'));
-document.querySelector('#divide').addEventListener('click', onClickOperator('÷'));
-document.querySelector('#multiply').addEventListener('click', onClickOperator('×'));
 
-
-// 초기화 이벤트 설정
-document.querySelector('#clear').addEventListener('click', () => {
-    firstOperand = '0';
-    secondOperand = '';
-    operator = '';
-    $result.value = '0';
+//배열로 순회하며 operator들 호출
+const operatorButtons = document.querySelectorAll('.operator');
+operatorButtons.forEach(button => {
+    const operator = button.textContent;
+    button.addEventListener('click', onClickOperator(operator));
 });
-
-// Delete 이벤트 설정
-document.querySelector('#delete').addEventListener('click', () => {
-    if (secondOperand) {
-        secondOperand = secondOperand.slice(0, -1);
-    }   else if (operator) {
-        operator = '';
-    }   else {
-        firstOperand = firstOperand.slice(0,-1);
-        if (firstOperand === '') {
-            firstOperand === '0';
-        }
-    }
-    $result.value = firstOperand + operator + secondOperand;
-});    
 
 
 
@@ -172,6 +152,32 @@ function calculate() {
 };
 
 
+// 초기화 이벤트 설정
+document.querySelector('#clear').addEventListener('click', () => {
+    firstOperand = '0';
+    secondOperand = '';
+    operator = '';
+    $result.value = '0';
+});
+
+
+// Delete 이벤트 설정
+document.querySelector('#delete').addEventListener('click', () => {
+    if (secondOperand) {
+        secondOperand = secondOperand.slice(0, -1);
+    }   else if (operator) {
+        operator = '';
+    }   else {
+        firstOperand = firstOperand.slice(0,-1);
+        if (firstOperand === '') {
+            firstOperand === '0';
+        }
+    }
+    $result.value = firstOperand + operator + secondOperand;
+});    
+
+
+
 // plus-minus 연산자 클릭 이벤트 설정
 document.querySelector('#plus-minus').addEventListener('click', () => {
     if (secondOperand !== '') {
@@ -184,4 +190,45 @@ document.querySelector('#plus-minus').addEventListener('click', () => {
         }
         $result.value = firstOperand;
     }  
+});
+
+
+// persent 클릭 이벤트 설정
+document.querySelector('#persent').addEventListener('click', () => {
+    let calculatedValue; //계산될 값
+
+    if (operator && secondOperand) { //두번째값일때
+        const num1 = parseFloat(firstOperand);
+        const num2 = parseFloat(secondOperand);
+
+        switch(operator) {
+            case '+':
+            case '-':
+                calculatedValue = (num1 * num2) / 100;
+                break;
+            case '×':
+            case '÷':
+                calculatedValue = num2 / 100;
+                break;
+            default:
+                calculatedValue = num2 / 100;
+        }
+        secondOperand = calculatedValue.toString();
+        $result.value = secondOperand;
+
+    } else if (firstOperand) { //첫번째값일때
+        const num1 = parseFloat(firstOperand);
+        calculatedValue = num1 / 100;
+
+        firstOperand = calculatedValue.toString();
+        $result.value = firstOperand;
+        operator = '';
+        secondOperand = '';
+
+    } else { //아무것도 입련되지 않은 상태일때
+        $result.value = '0';
+        firstOperand = '0';
+        secondOperand = '';
+        operator = '';
+    }
 });
