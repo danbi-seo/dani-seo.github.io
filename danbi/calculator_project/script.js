@@ -59,14 +59,19 @@ const onClickDecimal  = () => {
     if (operator) {
         if(!secondOperand.includes('.')) {
             secondOperand += '.';
-            $result.value = firstOperand + operator + secondOperand;
+            $result.value = secondOperand;
         }
     } else {
         if (!firstOperand.includes('.')) {
+            if (firstOperand === '') {
+                firstOperand = '0.';
+            } else {
             firstOperand += '.';
-            $result.value = firstOperand + operator + secondOperand;
+            $result.value = firstOperand;
         }
     }
+}
+
 };
 
 document.querySelector('#decimal').addEventListener('click', onClickDecimal);
